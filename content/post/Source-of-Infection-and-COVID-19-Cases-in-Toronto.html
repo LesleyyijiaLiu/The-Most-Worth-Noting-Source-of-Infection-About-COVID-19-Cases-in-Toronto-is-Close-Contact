@@ -1,0 +1,361 @@
+---
+title: "The Most Worth Noting Source of Infection About COVID-19 Cases in Toronto is Close Contact"
+author: "Yijia Liu"
+date: 2020-09-26T21:13:14-05:00
+abstract: "COVID-19 became the heatest topic around 2020, and we need to determine the source of infection to prevent further outbreak in Toronto and to go through this period together. In this paper, we explore the *About COVID-19 Cases in Toronto* dataset to figure out some important **Source of Infection** in Toronto. We find that **Close contact** has the highest count for about **6500** cases among the city. Our findings have implications for further prevention and protection for citizens in Toronto."
+output: html_document
+---
+
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus (WHO, 2020). Now, 32,784,889 confirmed cases of COVID-19 have been reported in 213 countries and regions around the world (WORLDOMETER, 2020).Toronto health officials announced the first case of COVID-19 in Canada on January 25, after that, the COVID-19 cases increases rapidly in Canada (Thomas, 2020). There are about 17,259 cases in Toronto up until September 26th, 2020 and the number is increasing everyday (City of Toronto, 2020). As the result, we need to take this case seriously. For people who live in Toronto, they need to know how should they deal with this situation and stay safe. One way in my opinion is to find out the most possible source of infection in Toronto because the result can be a reference for citizens to know what are the latent threats to their health and to avoid further infections for themselves.</p>
+<p>I chose <em>About COVID-19 Cases in Toronto</em> dataset from <em>Toronto Open Data</em> to find out which infection has the strongest relationship with the COVID-19 cases in Toronto. I drew a Bar Plot which include a list of source of infections related to the cases. Each category shows how many cases are related to one specific infection, which is clear to be concluded. Base on the bar plot, I found that <strong>Close contact</strong> has the highest count for about <strong>6500</strong> cases. Which means most of the observants was in close contact with a confirmed or probable COVID-19 case, for example they were reside in the same household with a confirmed or probable COVID-19 case.</p>
+<p>From this graph, we can find out that it is important to remember the most efficient way to protect ourselves from COVID-19 is to stay at home and avoid gather around. With this graph as a reference, people in Toronto can be more aware of what they should avoid and what they should remember for the further protection as well as stay away from some rumor. One limitation for this dataset is the numbers that <em>Toronto Open Data</em> have may be different from those published elsewhere because the data was extracted at different times and come from different sources, which means it would be hard to decide which number may be the most precise one.</p>
+</div>
+<div id="about-the-dataset" class="section level1">
+<h1>About the Dataset</h1>
+<p>In the context of the evolving global epidemic, Toronto’s public health department is responding to the ongoing COVID-19 outbreak. This data set contains demographic, geographic information and severity information of all confirmed and probable cases that have been reported to and managed by Toronto Public Health since the first case was reported in January 2020. These include sporadic (occurring in the community) and fulminant cases-related. Data is extracted from the Provincial Infectious Disease Reporting System (iPHIS) and Toronto’s customized COVID-19 Case Management System (CORES), and combined for reporting. Each row summarizes the information of a case.</p>
+<div id="a-brief-graph-about-the-dataset" class="section level2">
+<h2>A Brief Graph About the Dataset</h2>
+<pre><code>## # A tibble: 6 x 18
+##    `_id` Assigned_ID `Outbreak Assoc… `Age Group` `Neighbourhood … FSA  
+##    &lt;int&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;       &lt;chr&gt;            &lt;chr&gt;
+## 1 143647           1 Sporadic         50 to 59 Y… Willowdale East  M2N  
+## 2 143648           2 Sporadic         50 to 59 Y… Willowdale East  M2N  
+## 3 143649           3 Sporadic         20 to 29 Y… Parkwoods-Donal… M3A  
+## 4 143650           4 Sporadic         60 to 69 Y… Church-Yonge Co… M4W  
+## 5 143651           5 Sporadic         60 to 69 Y… Church-Yonge Co… M4W  
+## 6 143652           6 Sporadic         50 to 59 Y… Newtonbrook West M2R  
+## # … with 12 more variables: `Source of Infection` &lt;chr&gt;, Classification &lt;chr&gt;,
+## #   `Episode Date` &lt;chr&gt;, `Reported Date` &lt;chr&gt;, `Client Gender` &lt;chr&gt;,
+## #   Outcome &lt;chr&gt;, `Currently Hospitalized` &lt;chr&gt;, `Currently in ICU` &lt;chr&gt;,
+## #   `Currently Intubated` &lt;chr&gt;, `Ever Hospitalized` &lt;chr&gt;, `Ever in
+## #   ICU` &lt;chr&gt;, `Ever Intubated` &lt;chr&gt;</code></pre>
+</div>
+<div id="data-summary" class="section level2">
+<h2>Data summary</h2>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">data</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">17872</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">18</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">16</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Outbreak Associated</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">19</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Age Group</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">14</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Neighbourhood Name</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">35</td>
+<td align="right">0</td>
+<td align="right">141</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">FSA</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">97</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Source of Infection</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">25</td>
+<td align="right">0</td>
+<td align="right">8</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Classification</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Episode Date</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">0</td>
+<td align="right">217</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Reported Date</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">0</td>
+<td align="right">212</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Client Gender</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">11</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Outcome</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Currently Hospitalized</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Currently in ICU</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Currently Intubated</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Ever Hospitalized</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Ever in ICU</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Ever Intubated</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">_id</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">152582.50</td>
+<td align="right">5159.35</td>
+<td align="right">143647</td>
+<td align="right">148114.75</td>
+<td align="right">152582.5</td>
+<td align="right">157050.25</td>
+<td align="right">161518</td>
+<td align="left">▇▇▇▇▇</td>
+</tr>
+<tr class="even">
+<td align="left">Assigned_ID</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">9026.35</td>
+<td align="right">5248.05</td>
+<td align="right">1</td>
+<td align="right">4482.75</td>
+<td align="right">8984.5</td>
+<td align="right">13529.25</td>
+<td align="right">18202</td>
+<td align="left">▇▇▇▇▇</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="graph-of-source-of-infection-about-covid-19-cases-in-toronto" class="section level1">
+<h1>Graph of Source of Infection About COVID-19 Cases in Toronto</h1>
+<p>In this paper, I’m going to look at different <strong>Source of Infection</strong> in COVID-19 Cases in Toronto. By looking up those infections as a reference, we can have a clear idea about what should we avoid and what should we remember for the further protection as well as avoid those rumors that threat people with no reason.</p>
+<p><img src="/post/Source-of-Infection-and-COVID-19-Cases-in-Toronto_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+<p>The bar plot I drew shows the different sources of infection about 17872 COVID-19 cases in Toronto and how many cases does each source contain.</p>
+<p>From the graph we can see <strong>Close contact</strong> has the highest count for about <strong>6500</strong> cases. Which means most of the observants was in close contact with a confirmed or probable COVID-19 case, for example they were reside in the same household with a confirmed or probable COVID-19 case. In this case, it is a warning for us to remember the most efficient way to protect ourselves and others is to stay at home and avoid gather around.</p>
+<p>Something surprised is that <strong>N/A</strong> is also a high-count-category compare to other source of infection, which contains about <strong>6000</strong> cases in Toronto. It may be reasonable because all the cases included in <strong>N/A</strong> section are related to <strong>outbreak period</strong>, in that period, it may be hard to determine which source exactly cause the infection.</p>
+<p>Moreover, it is worth noticing that there are also few cases, which are categorized as <strong>Unknown/Missing</strong> or <strong>Pending</strong>, which means source of infection does not identified or missing or information on source of infection is pending. In this severe period, it is a good habit to protect others that when people go out they remember where they go and who they contact with. This habit may make life easier for the government and public health institution to target the possible infected area and control a further coming outbreak as soon as possible.</p>
+<p>As the public health investigation of the reported cases and the continuous quality improvement plan progress, the data in <em>Toronto Open Data</em> may change, and other cases will continue to be reported. It means none of the sources of infection is less threatening than others, no matter how many cases does one kind of infection has, people should be aware of all of them and try their best to avoid the infections.</p>
+<div id="weaknesses" class="section level2">
+<h2>Weaknesses</h2>
+<p>The numbers that <em>Toronto Open Data</em> have may be different from those published elsewhere because the data was extracted at different times and come from different sources, which means it would be hard to decide which number may be the most precise one.</p>
+<p>Another limitation would be the correctness of classification. Since the source of infection may be overlapped, people may feel difficult to figure out what source exactly cause their infection to COVID-19. For example, people who are in <strong>Healthcare setting</strong> such as, family physician, dentist, ophthalmologist, sports doctor, may also be categorized in <strong>Institutional setting</strong> because they may as well work in long-term care homes, acute care hospitals, complex case hospitals, special-care facilities, retirement homes, rehabilitation hospitals.</p>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>-R Core Team (2020). R: A language and environment
+for statistical computing. R Foundation for
+Statistical Computing, Vienna, Austria. URL
+<a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>-JJ Allaire and Yihui Xie and Jonathan McPherson and
+Javier Luraschi and Kevin Ushey and Aron Atkins and
+Hadley Wickham and Joe Cheng and Winston Chang and
+Richard Iannone (2020). rmarkdown: Dynamic Documents
+for R. R package version 2.3. URL
+<a href="https://rmarkdown.rstudio.com" class="uri">https://rmarkdown.rstudio.com</a>.</p>
+<ul>
+<li>Wickham et al., (2019). Welcome to the tidyverse. Journal
+of Open Source Software, 4(43), 1686,
+<a href="https://doi.org/10.21105/joss.01686" class="uri">https://doi.org/10.21105/joss.01686</a></li>
+</ul>
+<p>-H. Wickham. ggplot2: Elegant Graphics for Data
+Analysis. Springer-Verlag New York, 2016.</p>
+<p>-Hadley Wickham, Romain Fran?ois, Lionel Henry and
+Kirill Müller (2020). dplyr: A Grammar of Data
+Manipulation. R package version 1.0.2.
+<a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a></p>
+<p>-Elin Waring, Michael Quinn, Amelia McNamara, Eduardo
+Arino de la Rubia, Hao Zhu and Shannon Ellis (2020).
+skimr: Compact and Flexible Summaries of Data. R
+package version 2.1.2.
+<a href="https://CRAN.R-project.org/package=skimr" class="uri">https://CRAN.R-project.org/package=skimr</a></p>
+<p>-Sharla Gelfand (2020). opendatatoronto: Access the
+City of Toronto Open Data Portal. R package version
+0.1.3.
+<a href="https://CRAN.R-project.org/package=opendatatoronto" class="uri">https://CRAN.R-project.org/package=opendatatoronto</a></p>
+<p>-Toronto Public Health (Sept 23, 2020).
+<a href="https://open.toronto.ca/dataset/covid-19-cases-in-toronto/" class="uri">https://open.toronto.ca/dataset/covid-19-cases-in-toronto/</a></p>
+<p>-Coronavirus disease (COVID-19). (n.d.). Retrieved September 26, 2020, from <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" class="uri">https://www.who.int/emergencies/diseases/novel-coronavirus-2019</a></p>
+<p>-Countries where COVID-19 has spread. (n.d.). Retrieved September 26, 2020, from <a href="https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/" class="uri">https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/</a></p>
+<p>-Thomas, D., &amp; Nair, A. (2020, January 25). Canada identifies first case of coronavirus. Retrieved September 26, 2020, from <a href="https://www.reuters.com/article/us-china-health-canada-idUSKBN1ZO0T9" class="uri">https://www.reuters.com/article/us-china-health-canada-idUSKBN1ZO0T9</a></p>
+<p>-City of Toronto. (2020, September 25). COVID-19. Retrieved September 26, 2020, from <a href="https://www.toronto.ca/home/covid-19/" class="uri">https://www.toronto.ca/home/covid-19/</a></p>
+</div>
