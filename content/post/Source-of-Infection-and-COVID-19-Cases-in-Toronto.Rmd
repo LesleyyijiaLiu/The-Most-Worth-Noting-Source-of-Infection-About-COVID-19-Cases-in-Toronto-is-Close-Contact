@@ -1,7 +1,7 @@
 ---
 title: "The Most Worth Noting Source of Infection About COVID-19 Cases in Toronto is Close Contact"
 author: "Yijia Liu"
-date: 2020-09-26T21:13:14-05:00
+date: 2020-09-24T21:13:14-05:00
 abstract: "COVID-19 became the heatest topic around 2020, and we need to determine the source of infection to prevent further outbreak in Toronto and to go through this period together. In this paper, we explore the *About COVID-19 Cases in Toronto* dataset to figure out some important **Source of Infection** in Toronto. We find that **Close contact** has the highest count for about **6500** cases among the city. Our findings have implications for further prevention and protection for citizens in Toronto."
 output: html_document
 ---
