@@ -22,11 +22,6 @@
 
 
 
-
-<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
-
-
-
 <link rel="stylesheet" href="../../../../css/fonts.css" media="all">
 <link rel="stylesheet" href="../../../../css/main.css" media="all">
 
@@ -64,7 +59,7 @@
 
   <article class="article">
     
-    <span class="article-duration">8 min read</span>
+    <span class="article-duration">7 min read</span>
     
 
     <h1 class="article-title">The Most Worth Noting Source of Infection About COVID-19 Cases in Toronto is Close Contact</h1>
@@ -79,34 +74,17 @@
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus (WHO, 2020). Now, 32,784,889 confirmed cases of COVID-19 have been reported in 213 countries and regions around the world (WORLDOMETER, 2020).Toronto health officials announced the first case of COVID-19 in Canada on January 25, after that, the COVID-19 cases increases rapidly in Canada (Thomas, 2020). There are about 17,259 cases in Toronto up until September 26th, 2020 and the number is increasing everyday (City of Toronto, 2020). As the result, we need to take this case seriously. For people who live in Toronto, they need to know how should they deal with this situation and stay safe. One way in my opinion is to find out the most possible source of infection in Toronto because the result can be a reference for citizens to know what are the latent threats to their health and to avoid further infections for themselves.</p>
-<p>I chose <em>About COVID-19 Cases in Toronto</em> dataset from <em>Toronto Open Data</em> to find out which infection has the strongest relationship with the COVID-19 cases in Toronto. I drew a Bar Plot which include a list of source of infections related to the cases. Each category shows how many cases are related to one specific infection, which is clear to be concluded. Base on the bar plot, I found that <strong>Close contact</strong> has the highest count for about <strong>6500</strong> cases. Which means most of the observants was in close contact with a confirmed or probable COVID-19 case, for example they were reside in the same household with a confirmed or probable COVID-19 case. Code and data supporting this analysis is available at: <a href="https://github.com/LesleyyijiaLiu/The-Most-Worth-Noting-Source-of-Infection-About-COVID-19-Cases-in-Toronto-is-Close-Contact" class="uri">https://github.com/LesleyyijiaLiu/The-Most-Worth-Noting-Source-of-Infection-About-COVID-19-Cases-in-Toronto-is-Close-Contact</a></p>
-<p>From this graph, we can find out that it is important to remember the most efficient way to protect ourselves from COVID-19 is to stay at home and avoid gather around. With this graph as a reference, people in Toronto can be more aware of what they should avoid and what they should remember for the further protection as well as stay away from some rumor. One limitation for this dataset is the numbers that <em>Toronto Open Data</em> have may be different from those published elsewhere because the data was extracted at different times and come from different sources, which means it would be hard to decide which number may be the most precise one.</p>
+<p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus (WHO, 2020). Now, 32,784,889 confirmed cases of COVID-19 have been reported in 213 countries and regions around the world (WORLDOMETER, 2020).Toronto health officials announced the first case of COVID-19 in Canada on January 25, after that, the COVID-19 cases increases rapidly in Canada (Thomas, 2020). There are about 17,872 cases in Toronto up until September 26th, 2020 and the number is increasing everyday (City of Toronto, 2020). As the result, we need to take this case seriously. For people who live in Toronto, they need to know how should they deal with this situation and stay safe. One way in my opinion is to find out the most possible source of infection in Toronto because the result can be a reference for citizens to know what are the latent threats to their health and to avoid further infections for themselves.</p>
+<p>I selected the data set of COVID-19 cases in Toronto from the <em>Toronto Open Data</em> to find out which infection has the strongest relationship with COVID-19 cases. I drew a bar graph that included a list of infection sources related to the case. Each category shows the number of cases related to a particular infection, which is an obvious conclusion. According to the bar graph, I found that <strong>Close Contact</strong> has the highest count in <strong>6500</strong> cases. This means that most observers are in close contact with confirmed or probable COVID-19 cases. Code and data supporting this analysis is available at: <a href="https://github.com/LesleyyijiaLiu/The-Most-Worth-Noting-Source-of-Infection-About-COVID-19-Cases-in-Toronto-is-Close-Contact" class="uri">https://github.com/LesleyyijiaLiu/The-Most-Worth-Noting-Source-of-Infection-About-COVID-19-Cases-in-Toronto-is-Close-Contact</a></p>
+<p>From this graph, we can find that remember that the most effective way to protect yourself from COVID-19 is to stay at home and avoid gathering. Using this chart as a reference, people in Toronto can more clearly know what to avoid, what to remember for further protection, and stay away from rumours. One limitation of this data set is that the figures of <em>Toronto Public Data</em> may be different from figures published elsewhere because the data was extracted at different times and come from different sources, which means it is difficult to determine which figure may be the most precise one.</p>
 </div>
 <div id="about-the-dataset" class="section level1">
 <h1>About the Dataset</h1>
 <p>In the context of the evolving global epidemic, Toronto’s public health department is responding to the ongoing COVID-19 outbreak. This data set contains demographic, geographic information and severity information of all confirmed and probable cases that have been reported to and managed by Toronto Public Health since the first case was reported in January 2020. These include sporadic (occurring in the community) and fulminant cases-related. Data is extracted from the Provincial Infectious Disease Reporting System (iPHIS) and Toronto’s customized COVID-19 Case Management System (CORES), and combined for reporting. Each row summarizes the information of a case.</p>
-<div id="a-brief-graph-about-the-dataset" class="section level2">
-<h2>A Brief Graph About the Dataset</h2>
-<pre><code>## # A tibble: 6 x 18
-##    `_id` Assigned_ID `Outbreak Assoc… `Age Group` `Neighbourhood … FSA  
-##    &lt;int&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;       &lt;chr&gt;            &lt;chr&gt;
-## 1 143647           1 Sporadic         50 to 59 Y… Willowdale East  M2N  
-## 2 143648           2 Sporadic         50 to 59 Y… Willowdale East  M2N  
-## 3 143649           3 Sporadic         20 to 29 Y… Parkwoods-Donal… M3A  
-## 4 143650           4 Sporadic         60 to 69 Y… Church-Yonge Co… M4W  
-## 5 143651           5 Sporadic         60 to 69 Y… Church-Yonge Co… M4W  
-## 6 143652           6 Sporadic         50 to 59 Y… Newtonbrook West M2R  
-## # … with 12 more variables: `Source of Infection` &lt;chr&gt;, Classification &lt;chr&gt;,
-## #   `Episode Date` &lt;chr&gt;, `Reported Date` &lt;chr&gt;, `Client Gender` &lt;chr&gt;,
-## #   Outcome &lt;chr&gt;, `Currently Hospitalized` &lt;chr&gt;, `Currently in ICU` &lt;chr&gt;,
-## #   `Currently Intubated` &lt;chr&gt;, `Ever Hospitalized` &lt;chr&gt;, `Ever in
-## #   ICU` &lt;chr&gt;, `Ever Intubated` &lt;chr&gt;</code></pre>
-</div>
 <div id="data-summary" class="section level2">
 <h2>Data summary</h2>
 <table>
-<caption><span id="tab:unnamed-chunk-4">Table 1: </span>Data summary</caption>
+<caption><span id="tab:unnamed-chunk-3">Table 1: </span>Data summary</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Name</td>
@@ -374,7 +352,7 @@
 <div id="graph-of-source-of-infection-about-covid-19-cases-in-toronto" class="section level1">
 <h1>Graph of Source of Infection About COVID-19 Cases in Toronto</h1>
 <p>In this paper, I’m going to look at different <strong>Source of Infection</strong> in COVID-19 Cases in Toronto. By looking up those infections as a reference, we can have a clear idea about what should we avoid and what should we remember for the further protection as well as avoid those rumors that threat people with no reason.</p>
-<p><img src="../../../../post/Source-of-Infection-and-COVID-19-Cases-in-Toronto_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="../../../../post/Source-of-Infection-and-COVID-19-Cases-in-Toronto_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="discussion" class="section level1">
 <h1>Discussion</h1>
@@ -450,18 +428,6 @@ City of Toronto Open Data Portal. R package version
 
     </div>
     
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
-<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-
-
 
     
 
